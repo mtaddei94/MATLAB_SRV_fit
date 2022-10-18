@@ -1,0 +1,11 @@
+function u0 = exp_decay(x, N0, A, thickness)
+% Exponential decay of initial carrier concentration as a function of the
+% absorptance at the excitation wavelength
+% thickness is in nm
+%   parameter alpha is a function of excitation wavelength
+alpha = (A / (log(e)* (thickness*1e-7))); % A needs to be changed for exciation wavelength, x is the thickness
+init_n0 = N0 * exp(-alpha * x);
+
+u0 = nc_init_fun;
+end
+
